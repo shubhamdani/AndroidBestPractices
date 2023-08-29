@@ -6,4 +6,10 @@ ext {
     corektxVersion = '1.7.0'
     appcompatVersion = '1.4.1'
     hiltVersion = '2.44.2'
+    androidMaterialDesign = '1.8.0'
+    androidAppCompat = '1.6.1'
+    core_ktx = '1.7.0'
+    android_test_junit = '1.1.5'
+    junit = '4.13.2'
+    espresso_core = '3.5.1'
 }
