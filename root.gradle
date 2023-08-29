@@ -2,6 +2,7 @@ apply from: '../build-version.gradle'
 apply plugin: 'org.jetbrains.kotlin.android'
 apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-parcelize'
 
 android {
     compileSdk androidTargetSdkVersion

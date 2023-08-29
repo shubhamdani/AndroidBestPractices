@@ -7,6 +7,7 @@ android {
 }
 
 dependencies {
+    implementation project(':core-common')
     implementation "androidx.core:core-ktx:${androidXCore}"
     implementation "androidx.appcompat:appcompat:${androidAppCompat}"
     implementation "com.google.android.material:material:${androidMaterialDesign}"
