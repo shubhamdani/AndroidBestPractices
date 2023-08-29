@@ -1,0 +1,40 @@
+apply plugin: 'com.android.library'
+apply plugin: 'org.jetbrains.kotlin.android'
+apply from: '../root.gradle'
+
+android {
+    namespace 'com.example.core_common'
+}
+
+dependencies {
+    api "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
+    api "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
+    api "androidx.cardview:cardview:${cardview}"
+
+    implementation("com.squareup.retrofit2:retrofit:${retrofitVersion}") {
+        exclude module: 'okhttp'
+        transitive = true
+    }
+
+    api "com.squareup.retrofit2:converter-jackson:${retrofitVersion}"
+
+    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidXLifecycleVersion"
+    api "androidx.lifecycle:lifecycle-livedata-ktx:$androidXLifecycleVersion"
+    api "androidx.lifecycle:lifecycle-common-java8:$androidXLifecycleVersion"
+    api "androidx.lifecycle:lifecycle-viewmodel-savedstate:$androidXLifecycleVersion"
+
+    api "androidx.fragment:fragment:${androidXFragmentVersion}"
+    api "androidx.navigation:navigation-ui-ktx:${androidXNavigationVersion}"
+    api "androidx.navigation:navigation-fragment-ktx:${androidXNavigationVersion}"
+
+    api "com.google.dagger:dagger:${daggerVersion}"
+
+    api "androidx.core:core-ktx:${androidXCore}"
+    api "androidx.activity:activity-ktx:${activityKtxVersion}"
+
+    implementation "com.google.android.material:material:${materialVersion}"
+    implementation "androidx.lifecycle:lifecycle-process:$androidXLifecycleVersion"
+
+    testImplementation "androidx.lifecycle:lifecycle-runtime-testing:$androidXLifecycleVersion"
+
+}

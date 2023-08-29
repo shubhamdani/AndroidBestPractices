@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 rootProject.name = "BestPractices"
 include ':app'
 include ':core-network'
+include ':core-common'

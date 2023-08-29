@@ -8,8 +8,25 @@ ext {
     hiltVersion = '2.44.2'
     androidMaterialDesign = '1.8.0'
     androidAppCompat = '1.6.1'
-    core_ktx = '1.7.0'
     android_test_junit = '1.1.5'
     junit = '4.13.2'
     espresso_core = '3.5.1'
+
+    constraintLayoutVersion = '2.1.4'
+    viewModelVersion = '2.1.0'
+    recyclerViewVersion = '1.2.1'
+    cardview = "1.0.0"
+    gridLayoutVersion = "1.0.0"
+
+    daggerVersion = '2.44.2'
+    retrofitVersion = '2.9.0'
+    okhttpVersion = '4.10.0'
+    androidXLifecycleVersion = "2.5.1"
+    androidXFragmentVersion = "1.5.5"
+    androidXNavigationVersion = "2.5.3"
+    androidXDataStoreVersion = "1.0.0"
+    androidXCore = "1.9.0"
+
+    activityKtxVersion = "1.6.1"
+    materialVersion = "1.7.0"
 }
