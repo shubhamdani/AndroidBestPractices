@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 import javax.inject.Inject
-import com.example.core_common.Result
+import com.example.core_common.Results
 
 class CallAdapterFactory @Inject constructor() : CallAdapter.Factory() {
 
@@ -18,7 +18,7 @@ class CallAdapterFactory @Inject constructor() : CallAdapter.Factory() {
         check(returnType is ParameterizedType) { "return type must be parameterized as Call<Result<Any>>" }
 
         val containerType = getParameterUpperBound(0, returnType)
-        if (getRawType(containerType) != Result::class.java) {
+        if (getRawType(containerType) != Results::class.java) {
             return null
         }
 

@@ -13,8 +13,15 @@ import okhttp3.OkHttpClient
 @Module
 class DashboardApiModule {
 
+    private val weatherApiBaseUrl: String = "https://api.openweathermap.org"
+
     @Provides
-    fun provideDashboardAPI(retrofitApiFactory: RetrofitApiFactory, okHttpClient: OkHttpClient, objectMapper: ObjectMapper) : DashboardAPI {
-        return retrofitApiFactory.create("https://add.com", okHttpClient, objectMapper).create(DashboardAPI::class.java)
+    fun provideDashboardAPI(
+        retrofitApiFactory: RetrofitApiFactory,
+        okHttpClient: OkHttpClient,
+        objectMapper: ObjectMapper
+    ): DashboardAPI {
+        return retrofitApiFactory.create(weatherApiBaseUrl, okHttpClient, objectMapper)
+            .create(DashboardAPI::class.java)
     }
 }
