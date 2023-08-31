@@ -3,6 +3,7 @@ package com.example.bestpractices.activity
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.bestpractices.databinding.ActivitySplashBinding
+import com.example.bestpractices.viewmodel.SplashCommands
 import com.example.bestpractices.viewmodel.SplashViewModel
 import com.example.core_common.activity.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -22,9 +23,9 @@ class SplashActivity : BaseActivity() {
         viewModel.command.observe(this@SplashActivity) { it?.let { execute(it) } }
     }
 
-    private fun execute(splashCommands: SplashViewModel.SplashCommands) {
+    private fun execute(splashCommands: SplashCommands) {
         when (splashCommands) {
-            SplashViewModel.SplashCommands.NavigateToDashboard -> featureNavigator.navigateToDashboardScreen(
+            SplashCommands.NavigateToDashboard -> featureNavigator.navigateToDashboardScreen(
                 this
             )
         }

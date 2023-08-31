@@ -1,6 +1,10 @@
 package com.example.core_network.di
 
 import com.example.core_network.BuildConfig
+import com.fasterxml.jackson.databind.DeserializationFeature
+import com.fasterxml.jackson.databind.MapperFeature
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.json.JsonMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -34,5 +38,14 @@ class NetworkModule {
             }
             callTimeout(Duration.ofSeconds(CALL_TIMEOUT))
         }.build()
+    }
+
+    @Singleton
+    @Provides
+    fun getObjectMapper(): ObjectMapper {
+        return JsonMapper.builder()
+            .disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES)
+            .enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_ENUMS)
+            .build()
     }
 }
