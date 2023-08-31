@@ -1,8 +1,8 @@
 package com.example.core_network.retrofit
 
-import com.example.core_common.dto.dto.ErrorCode
-import com.example.core_common.dto.dto.NetworkError
-import com.example.core_common.dto.Result
+import com.example.core_common.dto.ErrorCode
+import com.example.core_common.dto.NetworkError
+import com.example.core_common.Result
 import okhttp3.Request
 import okio.Timeout
 import retrofit2.Call

@@ -1,6 +1,6 @@
-package com.example.core_common.dto
+package com.example.core_common
 
-import com.example.core_common.dto.dto.NetworkError
+import com.example.core_common.dto.NetworkError
 
 
 sealed class Result<out T : Any> {

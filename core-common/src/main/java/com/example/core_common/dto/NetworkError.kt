@@ -1,4 +1,4 @@
-package com.example.core_common.dto.dto
+package com.example.core_common.dto
 
 import android.os.Parcelable
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties

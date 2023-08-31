@@ -6,7 +6,7 @@ import retrofit2.Retrofit
 import java.lang.reflect.ParameterizedType
 import java.lang.reflect.Type
 import javax.inject.Inject
-import com.example.core_common.dto.Result
+import com.example.core_common.Result
 
 class CallAdapterFactory @Inject constructor() : CallAdapter.Factory() {
 

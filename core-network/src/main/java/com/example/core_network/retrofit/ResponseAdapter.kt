@@ -1,6 +1,6 @@
 package com.example.core_network.retrofit
 
-import com.example.core_common.dto.Result
+import com.example.core_common.Result
 import retrofit2.Call
 import retrofit2.CallAdapter
 import java.lang.reflect.Type
