@@ -28,7 +28,7 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
         super.onViewCreated(view, savedInstanceState)
         viewModel.viewState.observe(viewLifecycleOwner) {
             when (it) {
-                DashboardViewState.Weather -> Toast.makeText(context, "Loaded", Toast.LENGTH_SHORT)
+                is DashboardViewState.CurrentWeatherLoaded -> Toast.makeText(context, "Loaded", Toast.LENGTH_SHORT)
                     .show()
                 DashboardViewState.Loading -> Toast.makeText(context, "Loading", Toast.LENGTH_SHORT)
                     .show()
