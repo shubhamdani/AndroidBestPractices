@@ -20,6 +20,7 @@ class DashboardRepositoryImpl @Inject constructor(
     private val dashboardAPI: DashboardAPI,
     @DispatchersIO private val dispatchers: CoroutineDispatcher
 ) : DashboardRepository {
+
     companion object {
         private const val latitude: String = "33.44"
         private const val longitude: String = "-94.04"
