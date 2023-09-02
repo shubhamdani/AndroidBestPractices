@@ -8,20 +8,11 @@ android {
 
 dependencies {
     api "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
-    api "androidx.recyclerview:recyclerview:${recyclerViewVersion}"
-    api "androidx.cardview:cardview:${cardview}"
-
-    implementation("com.squareup.retrofit2:retrofit:${retrofitVersion}") {
-        exclude module: 'okhttp'
-        transitive = true
-    }
-
-    api "com.squareup.retrofit2:converter-jackson:${retrofitVersion}"
-
     api "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidXLifecycleVersion"
     api "androidx.lifecycle:lifecycle-livedata-ktx:$androidXLifecycleVersion"
     api "androidx.lifecycle:lifecycle-common-java8:$androidXLifecycleVersion"
     api "androidx.lifecycle:lifecycle-viewmodel-savedstate:$androidXLifecycleVersion"
+    api "com.squareup.retrofit2:converter-jackson:${retrofitVersion}"
 
     api "androidx.fragment:fragment:${androidXFragmentVersion}"
     api "androidx.navigation:navigation-ui-ktx:${androidXNavigationVersion}"

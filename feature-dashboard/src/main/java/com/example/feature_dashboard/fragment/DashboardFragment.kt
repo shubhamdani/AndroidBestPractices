@@ -26,6 +26,7 @@ class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel.fetchDashboardData()
         viewModel.viewState.observe(viewLifecycleOwner) {
             when (it) {
                 is DashboardViewState.CurrentWeatherLoaded -> Toast.makeText(context, "Loaded", Toast.LENGTH_SHORT)

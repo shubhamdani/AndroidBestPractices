@@ -12,6 +12,7 @@ ext {
     junit = '4.13.2'
     espresso_core = '3.5.1'
 
+    coroutinesVersion = '1.6.4'
     constraintLayoutVersion = '2.1.4'
     viewModelVersion = '2.1.0'
     recyclerViewVersion = '1.2.1'
@@ -29,4 +30,7 @@ ext {
 
     activityKtxVersion = "1.6.1"
     materialVersion = "1.7.0"
+
+    mockkLibraryVersion = '1.13.3'
+    assertj = '3.24.1'
 }

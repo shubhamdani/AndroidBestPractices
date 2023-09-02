@@ -10,7 +10,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SplashViewModel @Inject constructor() : BaseViewModel<SplashState, SplashCommands>() {
+class SplashViewModel @Inject constructor() : BaseViewModel<ViewState, SplashCommands>() {
 
     companion object {
         const val DUMMY_SPLASH_TIME_DELAY = 3000L
@@ -27,5 +27,3 @@ class SplashViewModel @Inject constructor() : BaseViewModel<SplashState, SplashC
 sealed class SplashCommands : Command {
     object NavigateToDashboard : SplashCommands()
 }
-
-sealed class SplashState: ViewState

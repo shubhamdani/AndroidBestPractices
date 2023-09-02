@@ -14,16 +14,10 @@ import javax.inject.Inject
 @HiltViewModel
 class DashboardViewModel @Inject constructor(
     private val dashboardRepository: DashboardRepositoryImpl
-) : BaseViewModel<DashboardViewState, DashboardCommand>() {
+) : BaseViewModel<DashboardViewState, Command>() {
 
-    init {
-        viewModelScope.launch {
-            viewState.value = DashboardViewState.Loading
-            fetchDashboardData()
-        }
-    }
-
-    private suspend fun fetchDashboardData() {
+    fun fetchDashboardData() = viewModelScope.launch {
+        viewState.value = DashboardViewState.Loading
         viewState.value = dashboardRepository.getDashboardData().let {
             when (it) {
                 is Results.Error -> DashboardViewState.Error
@@ -33,7 +27,6 @@ class DashboardViewModel @Inject constructor(
     }
 }
 
-sealed class DashboardCommand : Command
 sealed class DashboardViewState : ViewState {
     object Loading : DashboardViewState()
     data class CurrentWeatherLoaded(val currentWeather: CurrentWeather) : DashboardViewState()
