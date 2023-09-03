@@ -1,1 +1,6 @@
-<resources></resources>
+<resources>
+    <string name="temperature">Temp %s</string>
+    <string name="max_temperature">Max %s</string>
+    <string name="min_temperature">Min %s</string>
+    <string name="humidity">Humidity %s</string>
+</resources>

@@ -14,15 +14,18 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     @Inject
     lateinit var featureNavigator: FeatureNavigator
 
-    private lateinit var binding: VB
+    private lateinit var _binding: VB
+
+    val binding: VB
+        get() = _binding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = viewBinding(inflater, container)
-        return binding.root
+        _binding = viewBinding(inflater, container)
+        return _binding.root
     }
 
     abstract fun viewBinding(

@@ -4,37 +4,48 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.example.core_common.fragment.BaseFragment
-import com.example.feature_dashboard.databinding.FragmentDashboardBinding
+import com.example.feature_dashboard.composeview.DashboardComposeView
+import com.example.feature_dashboard.composeview.LoadingComposeView
+import com.example.feature_dashboard.composeview.RetryComposeView
+import com.example.feature_dashboard.databinding.FragmentDashboardComposeBinding
 import com.example.feature_dashboard.viewmodels.DashboardViewModel
 import com.example.feature_dashboard.viewmodels.DashboardViewState
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DashboardFragment : BaseFragment<FragmentDashboardBinding>() {
+class DashboardFragment : BaseFragment<FragmentDashboardComposeBinding>() {
 
     private val viewModel by viewModels<DashboardViewModel>()
 
     override fun viewBinding(
         inflater: LayoutInflater,
         container: ViewGroup?
-    ): FragmentDashboardBinding {
-        return FragmentDashboardBinding.inflate(inflater, container, false)
-    }
+    ) = FragmentDashboardComposeBinding.inflate(inflater, container, false)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.fetchDashboardData()
-        viewModel.viewState.observe(viewLifecycleOwner) {
-            when (it) {
-                is DashboardViewState.CurrentWeatherLoaded -> Toast.makeText(context, "Loaded", Toast.LENGTH_SHORT)
-                    .show()
-                DashboardViewState.Loading -> Toast.makeText(context, "Loading", Toast.LENGTH_SHORT)
-                    .show()
-                DashboardViewState.Error -> Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
-            }
+        with(viewModel.viewState) {
+            observe(viewLifecycleOwner) { renderView(it) }
         }
     }
+
+    private fun renderView(viewState: DashboardViewState) {
+        when (viewState) {
+            is DashboardViewState.CurrentWeatherLoaded -> showWeatherContent(viewState)
+            DashboardViewState.Loading -> showLoadingView()
+            DashboardViewState.Error -> showRetryView()
+        }
+    }
+
+    private fun showRetryView() =
+        binding.composeRootView.setContent { RetryComposeView(viewModel::fetchDashboardData) }
+
+    private fun showLoadingView() =
+        binding.composeRootView.setContent { LoadingComposeView() }
+
+    private fun showWeatherContent(currentWeatherLoaded: DashboardViewState.CurrentWeatherLoaded) =
+        binding.composeRootView.setContent { DashboardComposeView(currentWeatherLoaded.currentWeather) }
 }
