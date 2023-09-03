@@ -1,7 +1,7 @@
 ext {
     okhttpVersion = '4.9.3'
     androidMinSdkVersion = 26
-    androidTargetSdkVersion = 34
+    androidSdkVersion = 34
     androidPluginVersion = '7.4.1'
     corektxVersion = '1.7.0'
     appcompatVersion = '1.4.1'

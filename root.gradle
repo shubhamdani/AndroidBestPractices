@@ -5,11 +5,11 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'kotlin-parcelize'
 
 android {
-    compileSdk androidTargetSdkVersion
+    compileSdk androidSdkVersion
 
     defaultConfig {
         minSdk androidMinSdkVersion
-        targetSdk androidTargetSdkVersion
+        targetSdk androidSdkVersion
     }
 
     testOptions {
@@ -36,30 +36,23 @@ android {
 }
 
 dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.android.material
 
-    implementation "androidx.core:core-ktx:${corektxVersion}"
-    implementation "androidx.appcompat:appcompat:${appcompatVersion}"
-    implementation "com.google.android.material:material:${materialVersion}"
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation libs.hilt.android
+    kapt libs.hilt.android.compiler
 
+    androidTestImplementation libs.hilt.android.testing
+    kaptAndroidTest libs.hilt.android.compiler
 
-    implementation "com.google.dagger:hilt-android:${hiltVersion}"
-    kapt "com.google.dagger:hilt-android-compiler:${hiltVersion}"
+    api libs.okhttp
+    api libs.okhttp.logging.interceptor
 
-    androidTestImplementation "com.google.dagger:hilt-android-testing:${hiltVersion}"
-    kaptAndroidTest "com.google.dagger:hilt-android-compiler:${hiltVersion}"
-
-    api "com.squareup.okhttp3:okhttp:${okhttpVersion}"
-    api "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}"
-
-    testImplementation 'org.assertj:assertj-core:3.24.1'
-    testImplementation 'androidx.arch.core:core-common:2.2.0'
-    testImplementation 'androidx.arch.core:core-runtime:2.2.0'
-    testImplementation 'androidx.arch.core:core-testing:2.2.0'
-    testImplementation "junit:junit:${junit}"
-    testImplementation "io.mockk:mockk:${mockkLibraryVersion}"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:${coroutinesVersion}"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}"
-
+    testImplementation libs.assertj.core
+    testImplementation libs.junit.test
+    testImplementation libs.io.mockk
+    testImplementation libs.kotlinx.coroutines.test
+    testImplementation libs.kotlinx.coroutines.core
 }

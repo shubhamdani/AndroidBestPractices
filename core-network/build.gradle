@@ -8,13 +8,6 @@ android {
 
 dependencies {
     implementation project(':core-common')
-    implementation "androidx.core:core-ktx:${androidXCore}"
-    implementation "androidx.appcompat:appcompat:${androidAppCompat}"
-    implementation "com.google.android.material:material:${androidMaterialDesign}"
-    testImplementation "junit:junit:${junit}"
-    androidTestImplementation "androidx.test.ext:junit:${android_test_junit}"
-    androidTestImplementation "androidx.test.espresso:espresso-core:${espresso_core}"
-
-    api "com.squareup.okhttp3:okhttp:${okhttpVersion}"
-    api "com.squareup.okhttp3:logging-interceptor:${okhttpVersion}"
+    api libs.okhttp
+    api libs.okhttp.logging.interceptor
 }
