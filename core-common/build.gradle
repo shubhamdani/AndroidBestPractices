@@ -7,25 +7,24 @@ android {
 }
 
 dependencies {
-    api "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}"
-    api "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidXLifecycleVersion"
-    api "androidx.lifecycle:lifecycle-livedata-ktx:$androidXLifecycleVersion"
-    api "androidx.lifecycle:lifecycle-common-java8:$androidXLifecycleVersion"
-    api "androidx.lifecycle:lifecycle-viewmodel-savedstate:$androidXLifecycleVersion"
-    api "com.squareup.retrofit2:converter-jackson:${retrofitVersion}"
+    api libs.androidx.constraintlayout
+    api libs.androidx.lifecycle.viewmodel.ktx
+    api libs.androidx.lifecycle.livedata.ktx
+    api libs.androidx.lifecycle.common.java8
+    api libs.androidx.lifecycle.viewmodel.savedstate
+    api libs.retrofit.jackson
 
-    api "androidx.fragment:fragment:${androidXFragmentVersion}"
-    api "androidx.navigation:navigation-ui-ktx:${androidXNavigationVersion}"
-    api "androidx.navigation:navigation-fragment-ktx:${androidXNavigationVersion}"
+    api libs.androidx.fragment
+    api libs.androidx.navigation.ui.ktx
+    api libs.androidx.navigation.fragment.ktx
 
-    api "com.google.dagger:dagger:${daggerVersion}"
+    api libs.dagger
 
-    api "androidx.core:core-ktx:${androidXCore}"
-    api "androidx.activity:activity-ktx:${activityKtxVersion}"
+    api libs.androidx.core.ktx
+    api libs.androidx.activity.ktx
 
-    implementation "com.google.android.material:material:${materialVersion}"
-    implementation "androidx.lifecycle:lifecycle-process:$androidXLifecycleVersion"
+    implementation libs.android.material
+    implementation libs.androidx.lifecycle.process
 
-    testImplementation "androidx.lifecycle:lifecycle-runtime-testing:$androidXLifecycleVersion"
-
+    testImplementation libs.androidx.lifecycle.runtime.testing
 }
