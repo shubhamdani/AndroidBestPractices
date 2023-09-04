@@ -27,7 +27,7 @@ fun DashboardComposeView(
             Modifier
                 .fillMaxHeight(1f)
                 .fillMaxWidth(1f),
-            contentScale = ContentScale.FillWidth
+            contentScale = ContentScale.FillBounds
         )
         Column(
             Modifier.padding(16.dp)
