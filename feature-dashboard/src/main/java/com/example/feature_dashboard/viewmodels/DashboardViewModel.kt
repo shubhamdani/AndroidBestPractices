@@ -3,6 +3,7 @@ package com.example.feature_dashboard.viewmodels
 import androidx.lifecycle.viewModelScope
 import com.example.core_common.Results
 import com.example.core_common.viewmodel.BaseViewModel
+import com.example.core_common.viewmodel.BaseIntent
 import com.example.core_common.viewmodel.Command
 import com.example.core_common.viewmodel.ViewState
 import com.example.feature_dashboard.data.repository.DashboardRepositoryImpl
@@ -14,21 +15,31 @@ import javax.inject.Inject
 @HiltViewModel
 class DashboardViewModel @Inject constructor(
     private val dashboardRepository: DashboardRepositoryImpl
-) : BaseViewModel<DashboardViewState, Command>() {
+) : BaseViewModel<DashboardViewState, DashboardIntent, Command>() {
 
-    fun fetchDashboardData() = viewModelScope.launch {
+    private fun fetchDashboardData() = viewModelScope.launch {
         viewState.value = DashboardViewState.Loading
         viewState.value = dashboardRepository.getDashboardData().let {
             when (it) {
                 is Results.Error -> DashboardViewState.Error
-                is Results.Success -> DashboardViewState.CurrentWeatherLoaded(it.body)
+                is Results.Success -> DashboardViewState.DashBoardData(it.body)
             }
+        }
+    }
+
+    override fun performActions(intent: DashboardIntent) {
+        when (intent) {
+            DashboardIntent.FetchDashboardData -> fetchDashboardData()
         }
     }
 }
 
+sealed class DashboardIntent : BaseIntent {
+    object FetchDashboardData : DashboardIntent()
+}
+
 sealed class DashboardViewState : ViewState {
     object Loading : DashboardViewState()
-    data class CurrentWeatherLoaded(val currentWeather: CurrentWeather) : DashboardViewState()
+    data class DashBoardData(val currentWeather: CurrentWeather) : DashboardViewState()
     object Error : DashboardViewState()
 }

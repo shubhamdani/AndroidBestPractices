@@ -1,4 +1,4 @@
-package com.example.bestpractices.utils
+package com.example.test_utils
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

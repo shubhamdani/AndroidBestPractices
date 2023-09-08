@@ -2,7 +2,7 @@ package com.example.bestpractices.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.example.bestpractices.utils.MainDispatcherRule
+import com.example.test_utils.MainDispatcherRule
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.verify
@@ -17,7 +17,7 @@ import org.junit.rules.TestRule
 class SplashViewModelTest {
 
     private val testDelay = 3000L
-    private val mockkObserver = mockk<Observer<SplashCommands>>() {
+    private val mockkObserver = mockk<Observer<SplashCommand>>() {
         every { onChanged(any()) } answers {}
     }
     lateinit var viewModelInTest: SplashViewModel
@@ -26,17 +26,18 @@ class SplashViewModelTest {
     val rule: TestRule = InstantTaskExecutorRule()
 
     @get:Rule
-    val coroutineRule: MainDispatcherRule = MainDispatcherRule()
+    val coroutineRule: MainDispatcherRule =
+        MainDispatcherRule()
 
     private fun setup() {
         viewModelInTest = SplashViewModel()
-        viewModelInTest.command.observeForever(mockkObserver)
+        viewModelInTest.observableCommand.observeForever(mockkObserver)
     }
 
     @Test
     fun `should send the dashboard command after delay`() = runTest {
         setup()
         delay(testDelay)
-        verify { mockkObserver.onChanged(SplashCommands.NavigateToDashboard) }
+        verify { mockkObserver.onChanged(SplashCommand.NavigateToDashboard) }
     }
 }

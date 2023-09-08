@@ -2,14 +2,15 @@ package com.example.feature_dashboard.viewmodels
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.example.bestpractices.utils.MainDispatcherRule
 import com.example.core_common.Results
 import com.example.core_common.dto.ErrorCode
 import com.example.core_common.dto.NetworkError
 import com.example.feature_dashboard.data.repository.DashboardRepositoryImpl
 import com.example.feature_dashboard.domain.CurrentWeather
+import com.example.test_utils.MainDispatcherRule
 import io.mockk.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
 
@@ -41,26 +42,26 @@ class DashboardViewModelTest {
 
     private fun setup() {
         viewModel = DashboardViewModel(mockDashboardRepository)
-        viewModel.viewState.observeForever(mockViewObserver)
+        viewModel.observableViewState.observeForever(mockViewObserver)
     }
 
     @Test
-    fun `emit view state in a sequence when fetchDashboardData is called with Success result`() {
+    fun `emit view state in a sequence when fetchDashboardData is called with Success result`() = runTest {
         setup()
-        viewModel.fetchDashboardData()
+        viewModel.intent.send(DashboardIntent.FetchDashboardData)
         verifySequence {
             mockViewObserver.onChanged(DashboardViewState.Loading)
-            mockViewObserver.onChanged(DashboardViewState.CurrentWeatherLoaded(currentWeather))
+            mockViewObserver.onChanged(DashboardViewState.DashBoardData(currentWeather))
         }
     }
 
     @Test
-    fun `emit view state in a sequence when fetchDashboardData is called with Failure`() {
+    fun `emit view state in a sequence when fetchDashboardData is called with Failure`() = runTest {
         coEvery { mockDashboardRepository.getDashboardData() } returns Results.Error(
             NetworkError(ErrorCode.UNKNOWN_ERROR)
         )
         setup()
-        viewModel.fetchDashboardData()
+        viewModel.intent.send(DashboardIntent.FetchDashboardData)
         verifySequence {
             mockViewObserver.onChanged(DashboardViewState.Loading)
             mockViewObserver.onChanged(DashboardViewState.Error)

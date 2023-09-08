@@ -38,10 +38,12 @@ dependencies {
     implementation project(":core-common")
     implementation project(":core-network")
     implementation project(":feature-dashboard")
+    implementation project(":test-utils")
 
     implementation libs.androidx.navigation.fragment.ktx
     implementation libs.androidx.navigation.ui.ktx
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation libs.androidx.ext.junit
+    implementation libs.androidx.core.testing
 }

@@ -1,4 +1,4 @@
-package com.example.bestpractices
+package com.example.test_utils
 
 import org.junit.Test
 
