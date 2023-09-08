@@ -1,4 +1,4 @@
-package com.example.feature_dashboard.activity
+package com.example.feature_dashboard.presentation.activity
 
 import android.os.Bundle
 import androidx.navigation.findNavController

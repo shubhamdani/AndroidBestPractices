@@ -1,4 +1,4 @@
-package com.example.feature_dashboard.fragment
+package com.example.feature_dashboard.presentation.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.example.core_common.fragment.BaseFragment
-import com.example.feature_dashboard.composeview.DashboardComposeView
-import com.example.feature_dashboard.composeview.LoadingComposeView
-import com.example.feature_dashboard.composeview.RetryComposeView
+import com.example.feature_dashboard.presentation.composeview.DashboardComposeView
+import com.example.feature_dashboard.presentation.composeview.LoadingComposeView
+import com.example.feature_dashboard.presentation.composeview.RetryComposeView
 import com.example.feature_dashboard.databinding.FragmentDashboardComposeBinding
 import com.example.feature_dashboard.viewmodels.DashboardIntent
 import com.example.feature_dashboard.viewmodels.DashboardViewModel

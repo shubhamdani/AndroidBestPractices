@@ -3,7 +3,7 @@
 
     <application>
         <activity
-            android:name=".activity.DashboardActivity"
+            android:name=".presentation.activity.DashboardActivity"
             android:exported="true" />
     </application>
 

@@ -1,4 +1,4 @@
-package com.example.feature_dashboard.composeview
+package com.example.feature_dashboard.presentation.composeview
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button

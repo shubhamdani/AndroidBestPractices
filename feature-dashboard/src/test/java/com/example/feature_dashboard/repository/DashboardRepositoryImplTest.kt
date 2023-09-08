@@ -35,10 +35,12 @@ class DashboardRepositoryTest {
         every { humidity } returns 2
     }
     private val mockWeatherData = mockk<WeatherData> {
+        every { name } returns "Edinburgh"
         every { main } returns mockMain
         every { visibility } returns 2
     }
     private val mockCurrentWeather = mockk<CurrentWeather>() {
+        every { location } returns mockWeatherData.name
         every { temp } returns mockMain.temp
         every { maxTemp } returns mockMain.tempMax
         every { minTemp } returns mockMain.tempMin
