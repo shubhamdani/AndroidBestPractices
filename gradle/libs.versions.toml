@@ -1,0 +1,73 @@
+[versions]
+
+okhttpVersion = "4.9.3"
+androidMinSdkVersion = "26"
+androidTargetSdkVersion = "34"
+androidPluginVersion = "7.4.1"
+corektxVersion = "1.7.0"
+appcompatVersion = "1.4.1"
+hiltVersion = "2.44.2"
+androidMaterialDesign = "1.8.0"
+androidAppCompat = "1.6.1"
+android_test_junit = "1.1.5"
+jUnit = "4.13.2"
+dagger = "2.47"
+okhttp = "4.11.0"
+coroutinesVersion = "1.6.4"
+constraintLayoutVersion = "2.1.4"
+viewModelVersion = "2.1.0"
+recyclerViewVersion = "1.2.1"
+cardview = "1.0.0"
+gridLayoutVersion = "1.0"
+daggerVersion = "2.44.2"
+retrofitVersion = "2.9.0"
+androidXLifecycleVersion = "2.5.1"
+androidXFragmentVersion = "1.5.5"
+androidXNavigationVersion = "2.5.3"
+androidXDataStoreVersion = "1.0.0"
+androidXCore = "1.10.1"
+
+androidXFragment = "1.6.1"
+activityKtxVersion = "1.6.1"
+materialVersion = "1.9.0"
+mockkLibraryVersion = "1.13.3"
+assertj = "3.24.1"
+mockk = "1.13.7"
+
+androidXCoreTesting = "2.2.0"
+retrofit = "2.9.0"
+
+material = "1.9.0"
+extJunit = "1.1.3"
+[libraries]
+
+androidx-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "extJunit" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompatVersion" }
+android-material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintLayoutVersion" }
+androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "androidXNavigationVersion" }
+junit-test = { group = "junit", name = "junit", version.ref = "jUnit" }
+androidx-lifecycle-viewmodel-ktx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidXLifecycleVersion" }
+androidx-lifecycle-livedata-ktx = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidXLifecycleVersion" }
+androidx-lifecycle-common-java8 = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "androidXLifecycleVersion" }
+androidx-lifecycle-viewmodel-savedstate = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "androidXLifecycleVersion" }
+retrofit-jackson = { group = "com.squareup.retrofit2", name = "converter-jackson", version.ref = "retrofitVersion" }
+androidx-fragment = { group = "androidx.fragment", name = "fragment", version.ref = "androidXFragmentVersion" }
+androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "androidXNavigationVersion" }
+dagger = { group = "com.google.dagger", name = "dagger", version.ref = "daggerVersion" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidXCore" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "activityKtxVersion" }
+androidx-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "androidXLifecycleVersion" }
+androidx-lifecycle-runtime-testing = { group = "androidx.lifecycle", name = "lifecycle-runtime-testing", version.ref = "androidXLifecycleVersion" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttpVersion" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttpVersion" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "daggerVersion" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "daggerVersion" }
+hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "daggerVersion" }
+assertj-core = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
+androidx-core-testing = { group = "androidx.arch.core", name = "core-testing", version.ref = "androidXCoreTesting" }
+io-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockkLibraryVersion" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesVersion" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutinesVersion" }
+
+[plugins]
