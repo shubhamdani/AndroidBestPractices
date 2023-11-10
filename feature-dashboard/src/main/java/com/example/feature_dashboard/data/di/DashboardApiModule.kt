@@ -1,6 +1,6 @@
 package com.example.feature_dashboard.data.di
 
-import com.example.core_network.retrofit.RetrofitApiFactory
+import com.example.network.retrofit.RetrofitApiFactory
 import com.example.feature_dashboard.data.api.DashboardAPI
 import com.fasterxml.jackson.databind.ObjectMapper
 import dagger.Module

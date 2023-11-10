@@ -1,11 +1,11 @@
 package com.example.feature_dashboard.viewmodels
 
 import androidx.lifecycle.viewModelScope
-import com.example.core_common.Results
-import com.example.core_common.viewmodel.BaseViewModel
-import com.example.core_common.viewmodel.BaseIntent
-import com.example.core_common.viewmodel.Command
-import com.example.core_common.viewmodel.ViewState
+import com.example.common.Results
+import com.example.common.viewmodel.BaseViewModel
+import com.example.common.viewmodel.BaseIntent
+import com.example.common.viewmodel.Command
+import com.example.common.viewmodel.ViewState
 import com.example.feature_dashboard.data.repository.DashboardRepositoryImpl
 import com.example.feature_dashboard.domain.CurrentWeather
 import dagger.hilt.android.lifecycle.HiltViewModel

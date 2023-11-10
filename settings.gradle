@@ -14,7 +14,7 @@ dependencyResolutionManagement {
 }
 rootProject.name = "BestPractices"
 include ':app'
-include ':core-network'
-include ':core-common'
+include ':network'
+include ':common'
 include ':feature-dashboard'
 include ':test-utils'

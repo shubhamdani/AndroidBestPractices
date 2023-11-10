@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import com.example.bestpractices.databinding.ActivitySplashBinding
 import com.example.bestpractices.viewmodel.SplashCommand
 import com.example.bestpractices.viewmodel.SplashViewModel
-import com.example.core_common.activity.BaseActivity
+import com.example.common.activity.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @SuppressLint("CustomSplashScreen")

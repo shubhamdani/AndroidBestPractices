@@ -1,10 +1,10 @@
 package com.example.bestpractices.viewmodel
 
 import androidx.lifecycle.viewModelScope
-import com.example.core_common.viewmodel.BaseIntent
-import com.example.core_common.viewmodel.BaseViewModel
-import com.example.core_common.viewmodel.Command
-import com.example.core_common.viewmodel.ViewState
+import com.example.common.viewmodel.BaseIntent
+import com.example.common.viewmodel.BaseViewModel
+import com.example.common.viewmodel.Command
+import com.example.common.viewmodel.ViewState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

@@ -2,9 +2,9 @@ package com.example.feature_dashboard.viewmodels
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.example.core_common.Results
-import com.example.core_common.dto.ErrorCode
-import com.example.core_common.dto.NetworkError
+import com.example.common.Results
+import com.example.common.dto.ErrorCode
+import com.example.common.dto.NetworkError
 import com.example.feature_dashboard.data.repository.DashboardRepositoryImpl
 import com.example.feature_dashboard.domain.CurrentWeather
 import com.example.test_utils.MainDispatcherRule

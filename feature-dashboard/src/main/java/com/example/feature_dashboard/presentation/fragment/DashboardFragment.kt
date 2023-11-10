@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.example.core_common.fragment.BaseFragment
+import com.example.common.fragment.BaseFragment
 import com.example.feature_dashboard.presentation.composeview.DashboardComposeView
 import com.example.feature_dashboard.presentation.composeview.LoadingComposeView
 import com.example.feature_dashboard.presentation.composeview.RetryComposeView

@@ -1,7 +1,7 @@
 package com.example.bestpractices.di
 
 import com.example.bestpractices.navigator.AppFeatureNavigator
-import com.example.core_common.navigation.FeatureNavigator
+import com.example.common.navigation.FeatureNavigator
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

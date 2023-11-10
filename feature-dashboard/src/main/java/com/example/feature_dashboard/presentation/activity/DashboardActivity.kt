@@ -5,7 +5,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.example.core_common.activity.BaseActivity
+import com.example.common.activity.BaseActivity
 import com.example.feature_dashboard.R
 import com.example.feature_dashboard.databinding.ActivityDashboardBinding
 import dagger.hilt.android.AndroidEntryPoint

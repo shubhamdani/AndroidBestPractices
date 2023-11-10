@@ -1,7 +1,7 @@
 package com.example.feature_dashboard.data.repository
 
-import com.example.core_common.Results
-import com.example.core_common.di.DispatchersIO
+import com.example.common.Results
+import com.example.common.di.DispatchersIO
 import com.example.feature_dashboard.data.api.DashboardAPI
 import com.example.feature_dashboard.data.dto.WeatherData
 import com.example.feature_dashboard.domain.CurrentWeather

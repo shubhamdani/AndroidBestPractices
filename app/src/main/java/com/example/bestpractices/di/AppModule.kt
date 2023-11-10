@@ -1,6 +1,6 @@
 package com.example.bestpractices.di
 
-import com.example.core_common.di.DispatchersIO
+import com.example.common.di.DispatchersIO
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
