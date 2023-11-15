@@ -16,5 +16,5 @@ rootProject.name = "BestPractices"
 include ':app'
 include ':network'
 include ':common'
-include ':feature-dashboard'
+include ':dashboard'
 include ':test-utils'
