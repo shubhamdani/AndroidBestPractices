@@ -6,17 +6,12 @@ import com.example.common.dto.NetworkError
 import com.example.dashboard.data.api.DashboardAPI
 import com.example.dashboard.data.dto.Main
 import com.example.dashboard.data.dto.WeatherData
-import com.example.dashboard.data.repository.DashboardRepository
 import com.example.dashboard.data.repository.DashboardRepositoryImpl
 import com.example.dashboard.domain.CurrentWeather
-import io.mockk.coEvery
-import io.mockk.every
-import io.mockk.mockk
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
-import org.assertj.core.api.Assertions
 import org.junit.Before
 import org.junit.Test
 
@@ -25,7 +20,7 @@ class DashboardRepositoryTest {
 
     private val networkError: NetworkError =
         NetworkError(ErrorCode.UNKNOWN_ERROR, "Something went wrong")
-    private lateinit var repository: DashboardRepository
+    private lateinit var repository: DashboardRepositoryImpl
 
     private val mockMain = mockk<Main>() {
         every { humidity } returns 1

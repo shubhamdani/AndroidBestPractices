@@ -3,7 +3,7 @@ package com.example.dashboard.viewmodels
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.example.common.Results
-import com.example.common.dto.ErrorCode
+import com.example.common.fragment.dto.ErrorCode
 import com.example.common.dto.NetworkError
 import com.example.dashboard.data.repository.DashboardRepositoryImpl
 import com.example.dashboard.domain.CurrentWeather
