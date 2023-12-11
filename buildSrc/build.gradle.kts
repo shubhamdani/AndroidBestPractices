@@ -6,3 +6,8 @@ repositories {
     mavenCentral()
     gradlePluginPortal()
 }
+
+dependencies {
+    implementation(gradleApi())
+    implementation(localGroovy())
+}

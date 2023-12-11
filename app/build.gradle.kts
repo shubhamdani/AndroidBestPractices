@@ -6,7 +6,6 @@ plugins {
     id("kotlin-parcelize")
 }
 
-
 android {
     namespace = "com.example.bestpractices"
 

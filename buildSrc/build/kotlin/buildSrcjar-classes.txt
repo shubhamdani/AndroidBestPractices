@@ -1,1 +1,1 @@
-/Users/shubhamdani/AndroidStudioProjects/BestPractices/buildSrc/build/classes/kotlin/main/CommonConfiguration.class
+/Users/shubhamdani/AndroidStudioProjects/BestPractices/buildSrc/build/classes/kotlin/main/CommonConfiguration.class:/Users/shubhamdani/AndroidStudioProjects/BestPractices/buildSrc/build/classes/kotlin/main/com/quickbirdstudios/bluesqure/BluesquarePlugin.class
