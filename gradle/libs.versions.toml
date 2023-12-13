@@ -1,6 +1,8 @@
 [versions]
 
 okhttpVersion = "4.9.3"
+androidGradlePlugin = "7.4.1"
+kotlinGradleVersion = "1.8.22"
 androidMinSdkVersion = "26"
 androidTargetSdkVersion = "34"
 androidPluginVersion = "7.4.1"
@@ -71,5 +73,7 @@ androidx-core-testing = { group = "androidx.arch.core", name = "core-testing", v
 io-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockkLibraryVersion" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesVersion" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutinesVersion" }
+kotlinx-gradle = { group = "org.jetbrains.kotlinx", name = "kotlin-gradle-plugin", version.ref = "kotlinGradleVersion" }
 
 [plugins]
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

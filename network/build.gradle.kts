@@ -1,13 +1,16 @@
+import com.example.customplugin.ModuleConfigurationPlugin
+
 plugins {
-    id("org.jetbrains.kotlin.android")
-    id("com.android.library")
-    id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
+    `android-library`
+    `kotlin-android`
+    `kotlin-kapt`
 }
+
+apply<ModuleConfigurationPlugin>()
 
 android {
     namespace = "com.example.network"
-    compileSdk = CommonConfiguration.compileSdk
+    compileSdk = ProjectConfig.compileSdk
 }
 
 dependencies {
@@ -16,7 +19,13 @@ dependencies {
     api(libs.okhttp.logging.interceptor)
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
+    commonTesting()
+}
 
-    androidTestImplementation(libs.hilt.android.testing)
-    kaptAndroidTest(libs.hilt.android.compiler)
+fun Project.commonTesting() {
+    dependencies {
+        androidTestImplementation(libs.hilt.android.testing)
+        kaptAndroidTest(libs.hilt.android.compiler)
+        testImplementation(libs.io.mockk)
+    }
 }

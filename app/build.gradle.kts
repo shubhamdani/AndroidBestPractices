@@ -3,7 +3,6 @@ plugins {
     id("com.android.application")
     id("dagger.hilt.android.plugin")
     id("kotlin-kapt")
-    id("kotlin-parcelize")
 }
 
 android {
@@ -11,15 +10,25 @@ android {
 
     defaultConfig {
         applicationId = "com.example.bestpractices"
-        minSdk = CommonConfiguration.minSdk
-        compileSdk = CommonConfiguration.compileSdk
-        targetSdk = CommonConfiguration.targetSdk
-        versionCode = CommonConfiguration.versionCode
-        versionName = CommonConfiguration.versionName
+        minSdk = ProjectConfig.minSdk
+        compileSdk = ProjectConfig.compileSdk
+        targetSdk = ProjectConfig.targetSdk
+        versionCode = ProjectConfig.versionCode
+        versionName = ProjectConfig.versionName
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled = true
     }
+    buildFeatures {
+        compose = true
+    }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.4.8"
+    }
     buildFeatures {
         viewBinding = true
     }
@@ -34,11 +43,16 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_13
+        targetCompatibility = JavaVersion.VERSION_13
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "13"
+    }
+}
+kotlin {
+    jvmToolchain {
+        languageVersion.set(JavaLanguageVersion.of("13"))
     }
 }
 

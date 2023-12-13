@@ -1,15 +1,19 @@
+import com.example.customplugin.ModuleConfigurationPlugin
+
 plugins {
-    id("org.jetbrains.kotlin.android")
-    id("com.android.library")
-    id("dagger.hilt.android.plugin")
-    id("kotlin-kapt")
+    `android-library`
+    `kotlin-android`
+    `kotlin-kapt`
+    id("com.google.dagger.hilt.android")
 }
+
+apply<ModuleConfigurationPlugin>()
 
 @Suppress("UnstableApiUsage")
 android {
     namespace = "com.example.dashboard"
 
-    compileSdk = CommonConfiguration.compileSdk
+    compileSdk = ProjectConfig.compileSdk
     buildFeatures {
         compose = true
     }
@@ -46,4 +50,5 @@ dependencies {
     api(libs.android.material)
     api(libs.androidx.constraintlayout)
     api(libs.androidx.core.testing)
+    testImplementation(libs.io.mockk)
 }

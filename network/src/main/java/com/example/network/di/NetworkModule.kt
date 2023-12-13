@@ -1,6 +1,5 @@
 package com.example.network.di
 
-import com.example.network.BuildConfig
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.MapperFeature
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -33,9 +32,9 @@ class NetworkModule {
     @Singleton
     fun providesOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder().apply {
-            if (BuildConfig.DEBUG) {
+//            if (BuildConfig.DEBUG) {
                 addInterceptor(httpLoggingInterceptor)
-            }
+//            }
             callTimeout(Duration.ofSeconds(CALL_TIMEOUT))
         }.build()
     }

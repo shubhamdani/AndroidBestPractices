@@ -1,11 +1,15 @@
+import com.example.customplugin.ModuleConfigurationPlugin
+
 plugins {
-    id("org.jetbrains.kotlin.android")
-    id("com.android.library")
+    `android-library`
+    `kotlin-android`
 }
+
+apply<ModuleConfigurationPlugin>()
 
 android {
     namespace = "com.example.test_utils"
-    compileSdk = CommonConfiguration.compileSdk
+    compileSdk = ProjectConfig.compileSdk
 }
 
 dependencies {

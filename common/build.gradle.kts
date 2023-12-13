@@ -1,17 +1,14 @@
+import com.example.customplugin.ModuleConfigurationPlugin
 plugins {
-    id("org.jetbrains.kotlin.android")
-    id("com.android.library")
-    id("kotlin-kapt")
-    id("kotlin-parcelize")
+    `android-library`
+    `kotlin-android`
+    `kotlin-kapt`
 }
+
+apply<ModuleConfigurationPlugin>()
 
 android {
     namespace = "com.example.common"
-    compileSdk = CommonConfiguration.compileSdk
-
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
@@ -34,6 +31,7 @@ dependencies {
     kaptAndroidTest(libs.hilt.android.compiler)
     api(libs.androidx.core.ktx)
     api(libs.androidx.activity.ktx)
+    api("androidx.compose.compiler:compiler:1.5.6")
 
     implementation(libs.android.material)
     implementation(libs.androidx.lifecycle.process)
